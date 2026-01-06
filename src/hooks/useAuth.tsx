@@ -55,10 +55,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .from('user_roles')
       .select('role')
       .eq('user_id', userId)
-      .single();
+      .maybeSingle();
 
     if (!error && data) {
       setRole(data.role as UserRole);
+    } else {
+      setRole('user'); // Default to user if no role found
     }
   };
 
