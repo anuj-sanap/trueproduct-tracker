@@ -88,9 +88,23 @@ export default function Landing() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button asChild size="lg" className="bg-accent/80 hover:bg-accent/90 text-accent-foreground shadow-glow border-2 border-accent">
                 <Link to="/auth">
                   Login
+                </Link>
+              </Button>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex justify-center mt-4"
+            >
+              <Button asChild variant="ghost" size="sm" className="text-primary-foreground/80 hover:text-primary-foreground">
+                <Link to="/products">
+                  Browse Products
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </motion.div>

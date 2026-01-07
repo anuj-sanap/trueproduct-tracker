@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ScanLine, Clock, CheckCircle, XCircle, ArrowRight, Package } from 'lucide-react';
+import { ScanLine, Clock, CheckCircle, XCircle, ArrowRight, Package, ShoppingBag } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
 import { StatCard } from '@/components/ui/stat-card';
 import { Button } from '@/components/ui/button';
@@ -123,7 +123,7 @@ export default function UserDashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="grid md:grid-cols-2 gap-6 mb-8"
+          className="grid md:grid-cols-3 gap-6 mb-8"
         >
           <Link to="/scan">
             <div className="p-6 rounded-xl gradient-primary text-primary-foreground hover:shadow-glow transition-all cursor-pointer">
@@ -142,6 +142,28 @@ export default function UserDashboard() {
               </div>
               <Button variant="secondary" size="sm" className="mt-4">
                 Start Scanning
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          </Link>
+
+          <Link to="/products">
+            <div className="p-6 rounded-xl bg-card border border-border hover:border-accent/50 transition-all cursor-pointer">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold font-display mb-2 text-foreground">
+                    Browse Products
+                  </h3>
+                  <p className="text-muted-foreground">
+                    View all verified products
+                  </p>
+                </div>
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <ShoppingBag className="h-6 w-6 text-accent" />
+                </div>
+              </div>
+              <Button variant="outline" size="sm" className="mt-4">
+                View Products
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>

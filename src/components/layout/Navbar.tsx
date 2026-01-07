@@ -30,11 +30,13 @@ export function Navbar() {
       { href: '/admin/reports', label: 'Reports' },
     ] : [
       { href: '/dashboard', label: 'Dashboard' },
+      { href: '/products', label: 'Products' },
       { href: '/scan', label: 'Scan' },
       { href: '/report', label: 'Report' },
     ]
   ) : [
     { href: '/', label: 'Home' },
+    { href: '/products', label: 'Products' },
     { href: '/auth', label: 'Login' },
   ];
 

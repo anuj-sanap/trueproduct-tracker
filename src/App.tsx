@@ -10,8 +10,10 @@ import Auth from "./pages/Auth";
 import UserDashboard from "./pages/UserDashboard";
 import ScanProduct from "./pages/ScanProduct";
 import ReportFeedback from "./pages/ReportFeedback";
+import ProductList from "./pages/ProductList";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProductManagement from "./pages/admin/ProductManagement";
+import ReportManagement from "./pages/admin/ReportManagement";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,10 +40,12 @@ function AppRoutes() {
       <Route path="/dashboard" element={role === 'admin' ? <Navigate to="/admin" replace /> : <ProtectedRoute><UserDashboard /></ProtectedRoute>} />
       <Route path="/scan" element={role === 'admin' ? <Navigate to="/admin" replace /> : <ProtectedRoute><ScanProduct /></ProtectedRoute>} />
       <Route path="/report" element={role === 'admin' ? <Navigate to="/admin" replace /> : <ProtectedRoute><ReportFeedback /></ProtectedRoute>} />
+      <Route path="/products" element={<ProductList />} />
       
       {/* Admin Routes */}
       <Route path="/admin" element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} />
       <Route path="/admin/products" element={<ProtectedRoute adminOnly><ProductManagement /></ProtectedRoute>} />
+      <Route path="/admin/reports" element={<ProtectedRoute adminOnly><ReportManagement /></ProtectedRoute>} />
       
       <Route path="*" element={<NotFound />} />
     </Routes>
