@@ -52,6 +52,29 @@ export default function AdminDashboard() {
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
+        {/* Unified Header Banner */}
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }} 
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-6 p-4 rounded-xl bg-gradient-to-r from-accent/5 via-accent/10 to-primary/5 border border-accent/20"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                <Package className="h-5 w-5 text-accent" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">AuthentiScan Platform</p>
+                <p className="text-xs text-accent font-medium">Administration Console</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20">
+              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+              <span className="text-xs font-medium text-accent">System Active</span>
+            </div>
+          </div>
+        </motion.div>
+
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
           <h1 className="text-3xl font-bold font-display text-foreground mb-2">Admin Dashboard</h1>
           <p className="text-muted-foreground">Monitor product verification activity</p>
