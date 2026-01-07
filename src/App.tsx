@@ -34,10 +34,10 @@ function AppRoutes() {
       <Route path="/" element={user ? <Navigate to={role === 'admin' ? '/admin' : '/dashboard'} /> : <Landing />} />
       <Route path="/auth" element={user ? <Navigate to={role === 'admin' ? '/admin' : '/dashboard'} /> : <Auth />} />
       
-      {/* User Routes */}
-      <Route path="/dashboard" element={<ProtectedRoute><UserDashboard /></ProtectedRoute>} />
-      <Route path="/scan" element={<ProtectedRoute><ScanProduct /></ProtectedRoute>} />
-      <Route path="/report" element={<ProtectedRoute><ReportFeedback /></ProtectedRoute>} />
+      {/* User Routes - Redirect admins to admin panel */}
+      <Route path="/dashboard" element={role === 'admin' ? <Navigate to="/admin" replace /> : <ProtectedRoute><UserDashboard /></ProtectedRoute>} />
+      <Route path="/scan" element={role === 'admin' ? <Navigate to="/admin" replace /> : <ProtectedRoute><ScanProduct /></ProtectedRoute>} />
+      <Route path="/report" element={role === 'admin' ? <Navigate to="/admin" replace /> : <ProtectedRoute><ReportFeedback /></ProtectedRoute>} />
       
       {/* Admin Routes */}
       <Route path="/admin" element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} />
