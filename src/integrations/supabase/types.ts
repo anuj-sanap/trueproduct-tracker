@@ -117,6 +117,7 @@ export type Database = {
           expiry_date: string
           id: string
           manufacture_date: string
+          product_image: string | null
           product_name: string
           product_no: string
           qr_hash: string
@@ -130,6 +131,7 @@ export type Database = {
           expiry_date: string
           id?: string
           manufacture_date: string
+          product_image?: string | null
           product_name: string
           product_no: string
           qr_hash: string
@@ -143,6 +145,7 @@ export type Database = {
           expiry_date?: string
           id?: string
           manufacture_date?: string
+          product_image?: string | null
           product_name?: string
           product_no?: string
           qr_hash?: string
