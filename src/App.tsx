@@ -14,6 +14,7 @@ import ProductList from "./pages/ProductList";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProductManagement from "./pages/admin/ProductManagement";
 import ReportManagement from "./pages/admin/ReportManagement";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ function AppRoutes() {
       <Route path="/scan" element={role === 'admin' ? <Navigate to="/admin" replace /> : <ProtectedRoute><ScanProduct /></ProtectedRoute>} />
       <Route path="/report" element={role === 'admin' ? <Navigate to="/admin" replace /> : <ProtectedRoute><ReportFeedback /></ProtectedRoute>} />
       <Route path="/products" element={<ProductList />} />
+      <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
       
       {/* Admin Routes */}
       <Route path="/admin" element={<ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>} />
